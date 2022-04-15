@@ -6,9 +6,9 @@ from src.infra.config import Base
 class AnimalTypes(enum.Enum):
     """Defing Animals Types"""
 
-    dog = ("dog",)
-    cat = ("cat",)
-    fish = ("fish",)
+    dog = "dog"
+    cat = "cat"
+    fish = "fish"
     ant = "ant"
 
 
