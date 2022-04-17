@@ -1,19 +1,22 @@
-# pylint: disable=E1101
+# pylint: disable = E1101
 
 from src.infra.config import DBConnectionHandler
 from src.infra.entities import Users
 
 
-class Fakerepo:
-    """A simple repository"""
+class UserRepository:
+    """Class to manage user repository"""
 
     @classmethod
-    def inser_use(cls):
-        """something"""
-
+    def insert_user(cls, name: str, password: str):
+        """Insert data in user entity
+        :param - name: person name
+               - password: password user
+        :return
+        """
         with DBConnectionHandler() as db_connection:
             try:
-                new_user = Users(name="Programador", password="123")
+                new_user = Users(name=name, password=password)
                 db_connection.session.add(new_user)
                 db_connection.session.commit()
             except:
